@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W9DiscussionDemo</title>
+    <style>
+		p{
+			background-color: #B5B5B3;
+			border: 3px solid #FFFFFF;
+			padding: 3%;
+			font-size: 1.1em;
+			line-height: 1.5;
+		}
+	</style>
+    <script>
+        // Make heading uppercase
+       function displayInformation() {
+        let heading = document.querySelector("h1");
+        heading.innerHTML = heading.innerHTML.toUpperCase();
+
+        // Set and style today's date
+        document.getElementById("day").innerHTML="Monday";
+        document.querySelector("#day").style.color = "#0000FF";
+        document.querySelector("#day").style.fontWeight = 'bold';
+        document.querySelector("#day").style.fontSize = '25px';
+       }
+
+       // Say hello when button is clicked     
+       function getHelloText() {
+        document.getElementById("demo").innerHTML += "</br>" + "Hello";
+       }
+    </script>
+</head>
+<body onload = "displayInformation();">
+    <h1>This will turn to <i>uppercase</i></h1>
+    <p>
+		Today is <span id = "day"></span><br/>
+	</p>
+    <button onclick="getHelloText()">Get Hello Text</button>
+    </br>
+    <div id="demo"></div>
+</body>
+</html>
