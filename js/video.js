@@ -7,6 +7,8 @@ var skipBtn = document.getElementById("skip");
 var muteBtn = document.getElementById("mute");
 var slider = document.getElementById("slider");
 var volume = document.getElementById("volume");
+var vintage = document.getElementById("vintage");
+var orig = document.getElementById("orig");
 
 
 if (video) {
@@ -60,16 +62,13 @@ if (video) {
 	if (skipBtn) {
 		skipBtn.addEventListener("click", function() {
 			console.log("Skip!");
-			var time = video.currentTime;
-			var newTime = time + 10;
 			video.currentTime += 10;
 
 			if (video.ended) {
 				video.currentTime = 0;
-				newTime = 0;
 			}
-			console.log("Time before skip: " + time);
-			console.log("Time after skip: " + newTime);
+			
+			console.log("Current time is " + video.currentTime);
 		});
 	} // skip
 
@@ -91,6 +90,18 @@ if (video) {
 		slider.addEventListener("click", function() {
 			video.volume = slider.value / 100;
 			volume.innerHTML = slider.value;
+		});
+	}
+
+	if (vintage) {
+		vintage.addEventListener("click", function() {
+			video.classList.add("oldSchool");
+		});
+	}
+
+	if (orig) {
+		orig.addEventListener("click", function() {
+			video.classList.remove("oldSchool");
 		});
 	}
 } // video
