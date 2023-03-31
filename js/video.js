@@ -24,7 +24,7 @@ if (video) {
 		playBtn.addEventListener("click", function() {
 			console.log("Play!");
 			video.play();
-			volume.innerHTML = slider.value;
+			volume.innerHTML = slider.value + "%";
 		});
 	}; // play
 	
@@ -67,7 +67,7 @@ if (video) {
 			if (video.ended) {
 				video.currentTime = 0;
 			}
-			
+
 			console.log("Current time is " + video.currentTime);
 		});
 	} // skip
@@ -89,7 +89,7 @@ if (video) {
 	if (slider) {
 		slider.addEventListener("click", function() {
 			video.volume = slider.value / 100;
-			volume.innerHTML = slider.value;
+			volume.innerHTML = slider.value + "%";
 		});
 	}
 
