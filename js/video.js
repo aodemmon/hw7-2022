@@ -26,7 +26,7 @@ if (video) {
 			video.play();
 			volume.innerHTML = slider.value + "%";
 		});
-	}; // play
+	} // play
 	
 	// Pause video
 	if (pauseBtn) {
@@ -34,7 +34,7 @@ if (video) {
 			console.log("Pause!");
 			video.pause();
 		});
-	}; // pause 
+	} // pause 
 	
 	// Slow video by 10% and log new speed
 	if (slowerBtn) {
@@ -45,7 +45,7 @@ if (video) {
 			video.playbackRate = newPlaybackRate;
 			console.log("New playback rate is: " + video.playbackRate);
 		});
-	}; // slower
+	} // slower
 	
 	// Accelerate video by 10% and log new speed
 	if (fasterBtn) {
@@ -56,7 +56,7 @@ if (video) {
 			video.playbackRate = newPlaybackRate;
 			console.log("New playback rate is: " + video.playbackRate);
 		});
-	}; // faster
+	} // faster
 	
 	// Skip ahead 10 seconds. If at end of video, set back to beginning
 	if (skipBtn) {
@@ -84,24 +84,27 @@ if (video) {
 				document.getElementById("mute").innerHTML = "Unmute";
 			}
 		});
-	};
+	} // mute
 
+	// Update slider info and Volume display as it's used
 	if (slider) {
 		slider.addEventListener("click", function() {
 			video.volume = slider.value / 100;
 			volume.innerHTML = slider.value + "%";
 		});
-	}
+	} // slider
 
+	// Enable oldSchool in css file
 	if (vintage) {
 		vintage.addEventListener("click", function() {
 			video.classList.add("oldSchool");
 		});
-	}
+	} // vintage
 
+	// Disable oldSchool in css file
 	if (orig) {
 		orig.addEventListener("click", function() {
 			video.classList.remove("oldSchool");
 		});
-	}
+	} // orig
 } // video
