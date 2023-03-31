@@ -60,17 +60,13 @@ if (video) {
 	if (skipBtn) {
 		skipBtn.addEventListener("click", function() {
 			console.log("Skip!");
-			var duration = video.duration;
-			console.log("video duration: " + duration);
 			var time = video.currentTime;
-			var newTime;
-			// skip forward 10 seconds
-			newTime = time + 10;
-			video.currentTime = 10;
+			var newTime = time + 10;
+			video.currentTime += 10;
 
 			if (video.ended) {
-				//video.currentTime = 0;
-				//newTime = 0;
+				video.currentTime = 0;
+				newTime = 0;
 			}
 			console.log("Time before skip: " + time);
 			console.log("Time after skip: " + newTime);
